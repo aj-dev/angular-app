@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>My App</title>
+	<link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body ng-app="app" class="container">
+
+	<!-- header -->
+	<div ui-view="header"></div>
+
+	<!-- content -->
+	<div ui-view="content" class="well"></div>
+
+	<!-- footer -->
+	<div ui-view="footer"></div>
+
+	<!-- scripts -->
+	<script type="text/javascript" src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
+	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script type="text/javascript" src="bower_components/oclazyload/dist/ocLazyLoad.min.js"></script>
+	<script type="text/javascript" src="bower_components/lodash/lodash.min.js"></script>
+	<script type="text/javascript" src="src/app.js"></script>
+</body>
+</html>

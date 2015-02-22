@@ -1,0 +1,31 @@
+<div class="youtube">
+	<form ng-hide="state.hasApiKey" ng-submit="initialiseApi(apiKey)" class="form-inline">
+		<div class="form-group">
+    		<input type="text" class="form-control" id="api-key" placeholder="Enter your google API key" ng-model="apiKey" ng-change="setApiKey(apiKey)" />
+  			<button type="submit" class="btn btn-primary">Set API key</button>
+  			<span class="help-block alert alert-info">
+  				Requires <a href="https://developers.google.com/console/help/new/#activatingapis" target="_blank">active</a> Google YouTube Data API.
+  				More about <a href="https://developers.google.com/console/help/new/?hl=en_US#usingkeys" target="_blank">API keys</a>.
+  				Once set, the key will be stored until next page reload.
+  			</span>
+  		</div>
+	</form>
+	<form ng-show="state.hasApiKey">
+		<div class="form-group">
+			<input type="text" class="form-control" placeholder="Search..." ng-model="query" ng-change="search(query)" />
+		</div>
+	</form>
+	<div ng-show="state.dataLoaded" class="row">
+		<div ng-repeat="item in results track by item.id" class="col-xs-6 col-md-3 text-center">
+			<a class="thumbnail" href="https://www.youtube.com/watch?v={{item.id}}" target="_blank">
+				<img ng-src="{{item.thumbnailUrl}}" class="img-responsive"/>
+				<div class="caption">Published: {{item.publishedAt | date}}</div>
+			</a>
+		</div>
+	</div>
+	<div ng-show="state.hasApiKey && !state.dataLoaded" class="spinner">
+		<div class="bounce1"></div>
+		<div class="bounce2"></div>
+		<div class="bounce3"></div>
+	</div>
+</div>

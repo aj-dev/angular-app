@@ -1,0 +1,11 @@
+<div class="row">
+	<div class="col-xs-2 col-md-1 pull-left">
+		<span class="heading">YouTube</span>
+		<ul class="sub-nav">
+			<li ng-repeat="entertainment in entertainments track by entertainment.id">
+				<a ui-sref="app.entertainments.edit({path: entertainment.path})">{{entertainment.title}}</a>
+			</li>
+		</ul>
+	</div>
+	<div ui-view="edit" class="col-xs-10 col-md-11 pull-right"></div>
+</div>

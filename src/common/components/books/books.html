@@ -1,0 +1,33 @@
+<div class="books">
+	<form ng-hide="state.hasApiKey" ng-submit="initialiseApi(apiKey)" class="form-inline">
+		<div class="form-group">
+    		<input type="text" class="form-control" id="api-key" placeholder="Enter your Google API key" ng-model="apiKey" ng-change="setApiKey(apiKey)" />
+  			<button type="submit" class="btn btn-primary">Set API key</button>
+  			<span class="help-block alert alert-info">
+  				Requires <a href="https://developers.google.com/console/help/new/#activatingapis" target="_blank">active</a> Google Books API.
+  				More about <a href="https://developers.google.com/console/help/new/?hl=en_US#usingkeys" target="_blank">API keys</a>.
+  				Once set, the key will be stored until next page reload.
+  			</span>
+  		</div>
+	</form>
+	<form ng-show="state.hasApiKey">
+		<div class="form-group">
+			<input type="text" class="form-control" placeholder="Search..." ng-model="query" ng-change="search(query)" />
+		</div>
+	</form>
+	<div ng-show="state.dataLoaded" class="well">
+		<div class="row">
+			<div ng-repeat="book in books track by book.id" class="col-xs-3 col-md-2 text-center">
+				<a class="thumbnail" href="{{book.link}}" target="_blank">
+					<img ng-src="{{book.thumbnailUrl}}" class="img-responsive"/>
+					<span class="caption">{{book.authors}}</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div ng-show="state.hasApiKey && !state.dataLoaded" class="spinner">
+		<div class="bounce1"></div>
+		<div class="bounce2"></div>
+		<div class="bounce3"></div>
+	</div>
+</div>

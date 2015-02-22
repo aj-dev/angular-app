@@ -1,0 +1,18 @@
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<ul class="nav navbar-nav">
+			<li ng-class="{'active': state.current.name === 'app'}">
+				<a ui-sref="app">Home</a>
+			</li>
+			<li ng-class="{'active': state.current.name.split('.')[1] === 'entertainments'}">
+				<a ui-sref="app.entertainments">Entertainment</a>
+			</li>
+			<li ng-class="{'active': state.current.name.split('.')[1] === 'books'}">
+				<a ui-sref="app.books">Books</a>
+			</li>
+			<li ng-class="{'active': state.current.name.split('.')[1] === 'about'}">
+				<a ui-sref="app.about">About</a>
+			</li>
+		</ul>
+	</div>
+</nav>
