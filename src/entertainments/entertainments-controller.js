@@ -1,5 +1,5 @@
 angular.module('app.entertainments', [])
-    .controller('EntertainmentsController', ['$rootScope', '$scope', function ($rootScope, $scope) {
+    .controller('EntertainmentsController', ['$scope', function ($scope) {
         'use strict';
 
         $scope.entertainments = [{
