@@ -1,11 +1,11 @@
 {
-	"name": "angular-app",
-	"version": "0.0.1",
-	"dependencies": {
-		"angular": "1.2.x - 1.4.x",
-		"angular-ui-router": "^0.2.0",
-		"oclazyload": "^0.6.0",
-		"lodash": "^3.3.0",
-		"bootstrap": "^3.3.2"
-	}
+    "name": "angular-app",
+    "version": "0.0.1",
+    "dependencies": {
+        "angular": "1.2.x - 1.4.x",
+        "angular-ui-router": "^0.2.0",
+        "oclazyload": "^0.6.0",
+        "lodash": "^3.3.0",
+        "bootstrap": "^3.3.2"
+    }
 }
