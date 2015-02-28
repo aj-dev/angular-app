@@ -37,13 +37,10 @@ angular.module('app', ['ui.router', 'oc.lazyLoad'])
                             controller: 'EntertainmentsController',
                             resolve: {
                                 entertainments: ['$ocLazyLoad', function ($ocLazyLoad) {
-                                    return $ocLazyLoad.load({
-                                        name: 'app.entertainments',
-                                        files: [
-                                            'src/entertainments/entertainments-controller.js',
-                                            'src/entertainments/entertainments.css'
-                                        ]
-                                    });
+                                    return $ocLazyLoad.load([
+                                        'src/entertainments/entertainments-controller.js',
+                                        'src/entertainments/entertainments.css'
+                                    ]);
                                 }]
                             }
                         }
@@ -57,15 +54,11 @@ angular.module('app', ['ui.router', 'oc.lazyLoad'])
                             controller: 'EntertainmentsEditController',
                             resolve: {
                                 entertainmentsEdit: ['$ocLazyLoad', function ($ocLazyLoad) {
-                                    return $ocLazyLoad.load({
-                                        name: 'app.entertainments.edit',
-                                        files: ['src/entertainments/edit/entertainments-edit-controller.js']
-                                    });
+                                    return $ocLazyLoad.load('src/entertainments/edit/entertainments-edit-controller.js');
                                 }],
                                 loadYoutube: ['$ocLazyLoad', function ($ocLazyLoad) {
                                     return $ocLazyLoad.load({
                                         serie: true,
-                                        name: 'app.common.components.youtube',
                                         files: [
                                             'src/common/components/youtube/youtube.css',
                                             'src/common/services/google-api-service.js',
@@ -87,7 +80,6 @@ angular.module('app', ['ui.router', 'oc.lazyLoad'])
                             resolve: {
                                 books: ['$ocLazyLoad', function ($ocLazyLoad) {
                                     return $ocLazyLoad.load({
-                                        name: 'app.common.components.books',
                                         serie: true,
                                         files: [
                                             'src/common/components/books/books.css',
@@ -109,10 +101,7 @@ angular.module('app', ['ui.router', 'oc.lazyLoad'])
                             controller: 'AboutController',
                             resolve: {
                                 load: ['$ocLazyLoad', function ($ocLazyLoad) {
-                                    return $ocLazyLoad.load({
-                                        name: 'app.about',
-                                        files: ['src/about/about-controller.js']
-                                    });
+                                    return $ocLazyLoad.load('src/about/about-controller.js');
                                 }]
                             }
                         }
